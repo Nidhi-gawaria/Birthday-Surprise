@@ -1,0 +1,1660 @@
+/* ==========================================================
+   MAGICAL BIRTHDAY WEBSITE
+   Author : ChatGPT
+   Purpose: Main stylesheet
+   Feel    : Soft Purple | Magical | Elegant | Book Theme
+
+   IMPORTANT:
+   Feel free to change any colors, font sizes,
+   shadows or animations according to your liking.
+==========================================================*/
+
+/*==========================================================
+                    GOOGLE FONT
+==========================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Dancing+Script:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/*==========================================================
+                    ROOT COLORS
+Change these if you want a different purple shade.
+==========================================================*/
+:root{
+
+    --bg1:#f8f5ff;
+    --bg2:#efe7ff;
+
+    --primary:#9B7DFF;
+    --secondary:#B9A7FF;
+
+    --light:#ffffff;
+
+    --paper:#fffdf8;
+
+    --gold:#ffd86f;
+
+    --text:#40345d;
+
+    --shadow:0 20px 60px rgba(0,0,0,.15);
+
+}
+
+
+/*==========================================================
+                    RESET
+==========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    overflow:hidden;
+
+    font-family:Poppins,sans-serif;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--bg1),
+    var(--bg2));
+
+    color:var(--text);
+
+    height:100vh;
+
+}
+
+
+/*==========================================================
+              FLOATING PARTICLE CONTAINER
+==========================================================*/
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+
+/*==========================================================
+                 PASSWORD SCREEN
+==========================================================*/
+
+#password-screen{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.password-card{
+
+    width:430px;
+
+    max-width:90%;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.password-card h1{
+
+    font-family:Cinzel,serif;
+
+    margin-bottom:20px;
+
+    color:var(--primary);
+
+}
+
+
+.password-card p{
+
+    margin:20px 0;
+
+    line-height:1.7;
+
+}
+
+
+#gift-box{
+
+    width:180px;
+
+    transition:.5s;
+
+    cursor:pointer;
+
+}
+
+/* Hover animation */
+
+#gift-box:hover{
+
+    transform:
+    translateY(-10px)
+    rotate(-5deg)
+    scale(1.05);
+
+}
+
+
+#password{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:2px solid var(--secondary);
+
+    outline:none;
+
+    margin-bottom:20px;
+
+}
+
+
+/*==========================================================
+                        BUTTONS
+==========================================================*/
+
+button{
+
+    padding:13px 28px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.35s;
+
+}
+
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    background:#7c5eff;
+
+    box-shadow:0 15px 30px rgba(124,94,255,.3);
+
+}
+
+
+/*==========================================================
+                BOOK CONTAINER
+==========================================================*/
+
+#book{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/*==========================================================
+                  BOOK PAGE
+==========================================================*/
+
+.book-page{
+
+    display:none;
+
+    width:min(900px,90vw);
+
+    height:min(720px,90vh);
+
+    background:var(--paper);
+
+    border-radius:15px;
+
+    box-shadow:var(--shadow);
+
+    padding:40px;
+
+    position:relative;
+
+    overflow-y:auto;   /* Allows tall pages to scroll */
+    overflow-x:hidden;
+
+    animation:fade .8s;
+
+}
+.book-page::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.book-page::-webkit-scrollbar-track{
+
+    background:#f3e8ff;
+
+    border-radius:20px;
+
+}
+
+.book-page::-webkit-scrollbar-thumb{
+
+    background:#a78bfa;
+
+    border-radius:20px;
+
+}
+
+.book-page::-webkit-scrollbar-thumb:hover{
+
+    background:#8b5cf6;
+
+}
+
+
+/* Active page */
+
+.book-page.active{
+
+    display:block;
+
+}
+
+
+/*==========================================================
+                  COVER PAGE
+==========================================================*/
+
+.cover-images{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+
+.cover-images img{
+
+    width:220px;
+
+    border-radius:18px;
+
+    transition:.4s;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+
+/* Hover */
+
+.cover-images img:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+/*==========================================================
+                     LETTERS
+==========================================================*/
+
+.letter{
+
+    margin-top:30px;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    background:#fff;
+
+    line-height:2;
+
+    font-size:18px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+.letter p{
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:30px;
+
+}
+
+
+/*==========================================================
+                PAGE BUTTONS
+==========================================================*/
+
+.next-btn{
+
+    position:fixed;
+
+    right:35px;
+
+    bottom:30px;
+
+}
+
+
+.prev-btn{
+
+    position:fixed;
+
+    left:35px;
+
+    bottom:30px;
+
+}
+
+
+/*==========================================================
+                TITLES
+==========================================================*/
+
+h1,h2{
+
+    font-family:Cinzel,serif;
+
+    color:var(--primary);
+
+    text-align:center;
+
+}
+
+
+/*==========================================================
+                SCROLLBAR
+==========================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:50px;
+
+}
+
+
+/*==========================================================
+                FADE ANIMATION
+==========================================================*/
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*==========================================================
+          FLOATING STAR ANIMATION
+JavaScript will create stars using this class.
+==========================================================*/
+
+.star{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:float 8s linear infinite;
+
+    opacity:.8;
+
+}
+
+
+@keyframes float{
+
+    from{
+
+        transform:
+        translateY(100vh);
+
+    }
+
+    to{
+
+        transform:
+        translateY(-100px);
+
+    }
+
+}
+
+
+/*==========================================================
+              RESPONSIVE DESIGN
+==========================================================*/
+
+@media(max-width:768px){
+
+    .book-page{
+
+        padding:25px;
+
+    }
+
+    .cover-images{
+
+        flex-direction:column;
+
+    }
+
+    .cover-images img{
+
+        width:170px;
+
+    }
+
+    .letter p{
+
+        font-size:24px;
+
+    }
+
+}
+
+/* page 3 */
+/* ==========================================================
+   PAGE 3 - Seven Reasons Why You're Amazing
+   Magical Storybook Theme
+========================================================== */
+
+/* ==========================================
+   PAGE CONTAINER
+========================================== */
+
+#page3{
+
+    position: relative;
+
+    text-align: center;
+
+    padding: 40px 25px;
+
+}
+
+/* ==========================================
+   CHAPTER TITLE
+========================================== */
+
+.chapter-title{
+
+    font-size: 18px;
+
+    color: #8a63d2;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+
+    font-style: italic;
+
+}
+
+/* ==========================================
+   MAIN HEADING
+========================================== */
+
+#page3 h1{
+
+    font-size: 2.3rem;
+
+    color: #5f3dc4;
+
+    margin-bottom: 20px;
+
+}
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.chapter-text{
+
+    color: #555;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    line-height: 1.7;
+
+    margin-bottom: 45px;
+
+}
+
+/* ==========================================
+   FLOWER GRID
+========================================== */
+
+.flower-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    justify-items:center;
+
+    max-width:600px;
+
+    margin:0 auto;
+
+}
+
+/* Last flower in center */
+
+.flower:last-child{
+
+    grid-column:2;
+
+}
+
+/* ==========================================
+   FLOWER BUTTON
+========================================== */
+
+.flower{
+
+    width:90px;
+
+    height:90px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #b58cff,
+        #d8c1ff
+    );
+
+    font-size:42px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+        0 0 15px rgba(181,140,255,.45),
+        0 8px 20px rgba(0,0,0,.15);
+
+    animation:floatFlower 3s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* ==========================================
+   HOVER EFFECT
+========================================== */
+
+.flower:hover{
+
+    transform:
+        translateY(-8px)
+        scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(181,140,255,.9),
+        0 10px 30px rgba(0,0,0,.2);
+
+}
+
+/* ==========================================
+   CLICKED FLOWER
+========================================== */
+
+.flower.opened{
+
+    background:linear-gradient(
+        135deg,
+        #8d72ff,
+        #c7a8ff
+    );
+
+    box-shadow:
+        0 0 35px #b58cff;
+
+    transform:scale(1.1);
+
+}
+
+/* ==========================================
+   FLOATING ANIMATION
+========================================== */
+
+@keyframes floatFlower{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   MESSAGE CARD
+========================================== */
+
+.message-card{
+
+    position:fixed;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:420px;
+
+    max-width:90%;
+
+    background:#fffdf8;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.25);
+
+    z-index:1000;
+
+    animation:popUp .45s;
+
+}
+
+/* ==========================================
+   POPUP ANIMATION
+========================================== */
+
+@keyframes popUp{
+
+    from{
+
+        transform:
+        translate(-50%,-50%)
+        scale(.7);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+   CLOSE BUTTON
+========================================== */
+
+.close-card{
+
+    position:absolute;
+
+    right:18px;
+
+    top:15px;
+
+    width:35px;
+
+    height:35px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#e7dcff;
+
+    cursor:pointer;
+
+    font-size:18px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    padding-bottom: 37px;
+}
+
+.close-card:hover{
+
+    background:#c8b2ff;
+
+}
+
+/* ==========================================
+   POPUP TITLE
+========================================== */
+
+#reason-title{
+
+    color:#6b4fe4;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================================
+   POPUP MESSAGE
+========================================== */
+
+#reason-text{
+
+    line-height:1.8;
+
+    color:#555;
+
+}
+
+/* ==========================================
+   COMPLETION MESSAGE
+========================================== */
+
+.completion-message{
+
+    margin-top:40px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        #f2ebff,
+        #ffffff
+    );
+
+    box-shadow:
+        0 0 30px rgba(181,140,255,.35);
+
+    animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+    from{
+
+        box-shadow:
+        0 0 15px rgba(181,140,255,.3);
+
+    }
+
+    to{
+
+        box-shadow:
+        0 0 35px rgba(181,140,255,.7);
+
+    }
+
+}
+
+/* ==========================================
+   HIDDEN CLASS
+========================================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+/* ==========================================
+   PAGE BUTTONS
+========================================== */
+
+.page-buttons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:80px;
+
+}
+
+.page-buttons button{
+
+    padding:12px 30px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#8d72ff;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.page-buttons button:hover{
+
+    background:#6f4fe8;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .flower-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:25px;
+
+    }
+
+    .flower:last-child{
+
+        grid-column:auto;
+
+    }
+
+    .flower{
+
+        width:75px;
+
+        height:75px;
+
+        font-size:34px;
+
+    }
+
+    #page3 h1{
+
+        font-size:1.8rem;
+
+    }
+
+    .message-card{
+
+        padding:25px;
+
+    }
+
+}
+/* ==========================================================
+   PAGE 5 - BTS SCRAPBOOK
+========================================================== */
+
+
+/* ==========================================
+   PAGE CONTAINER
+========================================== */
+
+#page5{
+
+    position: relative;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+#page5 h1{
+
+    font-size: 2.3rem;
+
+    color: #6941c6;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+#page5 .chapter-text{
+
+    max-width: 650px;
+
+    margin: auto;
+
+    line-height: 1.8;
+
+    color: #666;
+
+    margin-bottom: 50px;
+
+}
+
+
+/* ==========================================
+   SCRAPBOOK BOARD
+========================================== */
+
+.scrapbook-board{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:900px;
+
+    min-height:760px;
+
+    margin:auto;
+
+}
+
+/* ==========================================
+   POLAROID CARD
+========================================== */
+
+.polaroid{
+
+    position: absolute;
+
+    width: 150px;
+
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+
+    cursor: pointer;
+
+    transition: .35s ease;
+
+}
+
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.polaroid img{
+
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    display: block;
+
+}
+
+
+/* ==========================================
+   CAPTION
+========================================== */
+
+.polaroid p{
+
+    margin-top: 12px;
+
+    font-size: 15px;
+
+    color: #555;
+
+    font-style: italic;
+
+}
+
+
+/* ==========================================
+   HOVER EFFECT
+========================================== */
+
+.polaroid:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.05)
+        rotate(0deg);
+
+    z-index: 20;
+
+    box-shadow:
+        0 15px 40px rgba(124,58,237,.35);
+
+}
+
+
+/* ==========================================
+   RANDOM POSITIONS
+========================================== */
+
+/* Top Left */
+.photo1{
+    top:40px;
+    left:70px;
+    transform:rotate(-8deg);
+}
+
+/* Top Right */
+.photo2{
+    top:50px;
+    right:70px;
+    transform:rotate(8deg);
+}
+
+/* Middle Left */
+.photo3{
+    top:280px;
+    left:140px;
+    transform:rotate(-5deg);
+}
+
+/* Middle Right */
+.photo4{
+    top:270px;
+    right:140px;
+    transform:rotate(5deg);
+}
+
+/* Bottom Left */
+.photo5{
+    top:500px;
+    left:230px;
+    transform:rotate(-6deg);
+}
+
+/* Bottom Right */
+.photo6{
+    top:500px;
+    right:230px;
+    transform:rotate(6deg);
+}
+
+
+/* ==========================================
+   TAPE
+========================================== */
+
+.tape{
+
+    position:absolute;
+
+    width:50px;
+
+    height:18px;
+
+    background:rgba(255,255,255,.55);
+
+    backdrop-filter:blur(2px);
+
+    top:-10px;
+
+    border-radius:4px;
+
+}
+
+
+.tape-left{
+
+    left:20px;
+
+    transform:rotate(-20deg);
+
+}
+
+
+.tape-right{
+
+    right:20px;
+
+    transform:rotate(20deg);
+
+}
+
+
+/* ==========================================
+   POPUP BACKGROUND
+========================================== */
+
+#photo-popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.6);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+
+/* ==========================================
+   HIDDEN
+========================================== */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/* ==========================================
+   POPUP CARD
+========================================== */
+
+.popup-content{
+
+    position:relative;
+
+    width:450px;
+
+    max-width:90%;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    animation:popup .4s ease;
+
+}
+
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ==========================================
+   POPUP IMAGE
+========================================== */
+
+#popup-image{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+}
+
+
+/* ==========================================
+   POPUP TITLE
+========================================== */
+
+#popup-title{
+
+    margin-top:20px;
+
+    color:#6b46c1;
+
+}
+
+
+/* ==========================================
+   POPUP MESSAGE
+========================================== */
+
+#popup-message{
+
+    margin-top:12px;
+
+    line-height:1.8;
+
+    color:#555;
+
+}
+
+
+/* ==========================================
+   CLOSE BUTTON
+========================================== */
+
+#close-popup{
+
+    position:absolute;
+
+    top:12px;
+
+    right:12px;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ede9fe;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+
+/* ==========================================
+   DECORATIONS
+========================================== */
+
+.page-decoration{
+
+    position:absolute;
+
+    font-size:28px;
+
+    opacity:.45;
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+.star1{
+
+    top:120px;
+
+    left:60px;
+
+}
+
+.star2{
+
+    top:500px;
+
+    right:80px;
+
+}
+
+.flower1{
+
+    bottom:180px;
+
+    left:40px;
+
+}
+
+.butterfly{
+
+    top:220px;
+
+    right:40px;
+
+}
+
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.scrapbook-board{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    height:auto;
+
+}
+
+.polaroid{
+
+    position:relative;
+
+    width:100%;
+
+    top:auto !important;
+    left:auto !important;
+    right:auto !important;
+    bottom:auto !important;
+
+    transform:none !important;
+
+}
+
+.polaroid img{
+
+    height:200px;
+
+}
+
+}
+/* last page 8*/
+/* ===================================================
+   PAGE 9
+=================================================== */
+
+#page9{
+
+    text-align:center;
+
+    overflow:auto;
+
+    position:relative;
+
+}
+
+
+/* Container */
+
+.ending-container{
+
+    max-width:650px;
+
+    margin:auto;
+
+    padding-top:30px;
+
+}
+
+
+/* Book */
+
+.closed-book{
+
+    font-size:90px;
+
+    animation:bookFloat 4s ease-in-out infinite;
+
+}
+
+
+/* Heading */
+
+#page9 h1{
+
+    color:#6b46c1;
+
+    margin-top:20px;
+
+    margin-bottom:25px;
+
+}
+
+
+/* Text */
+
+.ending-text{
+
+    line-height:2;
+
+    color:#555;
+
+    font-size:18px;
+
+}
+
+
+/* Divider */
+
+.ending-divider{
+
+    width:180px;
+
+    height:2px;
+
+    background:#d8b4fe;
+
+    margin:40px auto;
+
+}
+
+
+/* Signature */
+
+.signature{
+
+    color:#777;
+
+    line-height:2;
+
+    font-style:italic;
+
+}
+
+
+/* End */
+
+.the-end{
+
+    margin-top:45px;
+
+    color:#7c3aed;
+
+    animation:fadeGlow 2.5s infinite alternate;
+
+}
+
+
+/* Floating */
+
+@keyframes bookFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+
+/* Glow */
+
+@keyframes fadeGlow{
+
+    from{
+
+        opacity:.6;
+
+        letter-spacing:2px;
+
+    }
+
+    to{
+
+        opacity:1;
+
+        letter-spacing:5px;
+
+    }
+
+}
