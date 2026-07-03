@@ -25,7 +25,7 @@ function showPage(index){
 
 function unlockBook(){
     if(passwordInput.value.trim()!==correctPassword){
-        passwordMessage.textContent="Wrong Password 💜";
+        passwordMessage.textContent="Wrong Password 💜. Just write the password given by me!";
         passwordMessage.style.color="crimson";
         return;
     }
