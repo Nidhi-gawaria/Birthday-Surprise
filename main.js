@@ -4,7 +4,7 @@
 ===================================================== */
 
 // ---------------- PASSWORD ----------------
-const correctPassword="06/07"; // <-- CHANGE THIS
+const correctPassword="purple0607"; // <-- CHANGE THIS
 
 const passwordScreen=document.getElementById("password-screen");
 const book=document.getElementById("book");
